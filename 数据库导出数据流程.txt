@@ -1,0 +1,22 @@
+第一步：在设备创建文件夹/mnt/imp
+命令：mkdir /mnt/imp
+
+第二步：将名单进行整理
+       格式一（名单1）：序号	学号	姓名
+       格式二（名单2）：序号	姓名	学号
+名单注意事项：
+分隔符是 TABLES而不是空格
+第一行为序号，且序号必须连续。
+名单中不能出现空行或其他符号
+
+第三步：脚本与名单上传到审计设备
+脚本文件为import.php
+名单文件：mingd.txt
+脚本与名单路径：/mnt/imp
+名单1
+/usr/local/php/bin/php /mnt/imp/import.php /mnt/imp/mingdan1.txt /mnt/savemingdan1 1 2   
+名单2
+/usr/local/php/bin/php(设备php的路径) /mnt/imp/import.php（脚本文件路径） /mnt/imp/mingdan2.txt（名单路径） /mnt/savemingdan2（存储导出文件路径） 2 1
+重新运行脚本需要删除存储文件夹之后运行。
+
+第四步：在对应生成的文件夹下面下载文件。
